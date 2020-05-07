@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
-#from flaskwebgui import FlaskUI
+from flaskwebgui import FlaskUI
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
 app.config['SECRET_KEY'] = "random string"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-#ui = FlaskUI(app)
+ui = FlaskUI(app)
 
 db = SQLAlchemy(app)
 
@@ -59,5 +59,5 @@ def update(id,status):
 
 if __name__ == '__main__':
     db.create_all()
-    app.run()
-    #ui.run()
+    #app.run()
+    ui.run()
