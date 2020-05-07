@@ -1,9 +1,15 @@
+import os
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flaskwebgui import FlaskUI
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:root@localhost/FlaskDB'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ismjylvvbtsatz:dabd851e6aa6ad0d536955280d93470032c4fd18c0327a0865a545b3764a28e3@ec2-50-17-21-170.compute-1.amazonaws.com:5432/dfp4q0dkk1knc0'
+
+
+
 app.config['SECRET_KEY'] = "random string"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -59,5 +65,5 @@ def update(id,status):
 
 if __name__ == '__main__':
     db.create_all()
-    #app.run()
-    ui.run()
+    app.run()
+    #ui.run()
