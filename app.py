@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flaskwebgui import FlaskUI
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:root@localhost/FlaskDB'
 
 app.config['SECRET_KEY'] = "random string"
